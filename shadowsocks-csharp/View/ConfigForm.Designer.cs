@@ -58,6 +58,8 @@
             this.AddButton = new System.Windows.Forms.Button();
             this.ServerGroupBox = new System.Windows.Forms.GroupBox();
             this.ServersListBox = new System.Windows.Forms.ListBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.shareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.MoveDownButton = new System.Windows.Forms.Button();
@@ -72,6 +74,7 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.ServerGroupBox.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
@@ -447,7 +450,9 @@
             // 
             // ServersListBox
             // 
+            this.ServersListBox.ContextMenuStrip = this.contextMenuStrip1;
             this.ServersListBox.FormattingEnabled = true;
+            this.ServersListBox.HorizontalScrollbar = true;
             this.ServersListBox.IntegralHeight = false;
             this.ServersListBox.ItemHeight = 12;
             this.ServersListBox.Location = new System.Drawing.Point(0, 0);
@@ -456,6 +461,20 @@
             this.ServersListBox.Size = new System.Drawing.Size(166, 148);
             this.ServersListBox.TabIndex = 11;
             this.ServersListBox.SelectedIndexChanged += new System.EventHandler(this.ServersListBox_SelectedIndexChanged);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.shareToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(148, 26);
+            // 
+            // shareToolStripMenuItem
+            // 
+            this.shareToolStripMenuItem.Name = "shareToolStripMenuItem";
+            this.shareToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.shareToolStripMenuItem.Text = "ShareQRCode";
+            this.shareToolStripMenuItem.Click += new System.EventHandler(this.shareToolStripMenuItem_Click);
             // 
             // tableLayoutPanel2
             // 
@@ -655,6 +674,7 @@
             this.tableLayoutPanel1.PerformLayout();
             this.ServerGroupBox.ResumeLayout(false);
             this.ServerGroupBox.PerformLayout();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel6.ResumeLayout(false);
@@ -710,6 +730,8 @@
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.CheckBox PortableModeCheckBox;
         private System.Windows.Forms.CheckBox NeedPluginArgCheckBox;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem shareToolStripMenuItem;
     }
 }
 

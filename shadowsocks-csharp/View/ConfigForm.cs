@@ -1,8 +1,11 @@
 using Shadowsocks.Controller;
 using Shadowsocks.Model;
 using Shadowsocks.Properties;
+using Shadowsocks.Util;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Shadowsocks.View
@@ -558,6 +561,34 @@ namespace Shadowsocks.View
         private void UsePluginArgCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             ShowHidePluginArgInput(NeedPluginArgCheckBox.Checked);
+        }
+
+        private void shareToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            if (this.ServersListBox.SelectedItem != null)
+            {
+                string selectValue = this.ServersListBox.Text;
+
+                var servers = Configuration.Load();
+                var serverDatas = servers.configs.Select(
+                    server =>
+                        new KeyValuePair<string, string>(ShadowsocksController.GetServerURL(server), server.FriendlyName())
+                    ).ToList();
+                var selectIndex = serverDatas.FindIndex(serverData => serverData.Value.StartsWith(selectValue));
+
+                if(selectIndex >= 0)
+                {
+                    string ssrconfig = serverDatas[selectIndex].Key;
+                    QrCodeImg generateImg = new QrCodeImg();
+                    Tuple<Bitmap, string> rQrCode = generateImg.GenerateQrCode(ssrconfig, 210, 210);
+                    ShareQRCode qrCode = new ShareQRCode(rQrCode.Item1);
+ 
+                    qrCode.Show();
+                }
+
+            }
+
         }
     }
 }

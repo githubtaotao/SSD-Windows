@@ -165,6 +165,7 @@
     <Compile Include="StringEx.cs" />
     <Compile Include="Util\ProcessManagement\Job.cs" />
     <Compile Include="Util\ProcessManagement\ThreadUtil.cs" />
+    <Compile Include="Util\QrCodeImg.cs" />
     <Compile Include="Util\Sockets\LineReader.cs" />
     <Compile Include="Util\Sockets\SocketUtil.cs" />
     <Compile Include="Util\Sockets\WrappedSocket.cs" />
@@ -217,6 +218,12 @@
     </Compile>
     <Compile Include="View\QRCodeSplashForm.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ShareQRCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ShareQRCode.Designer.cs">
+      <DependentUpon>ShareQRCode.cs</DependentUpon>
     </Compile>
     <Compile Include="View\StatisticsStrategyConfigurationForm.cs">
       <SubType>Form</SubType>
@@ -276,6 +283,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\QRCodeForm.resx">
       <DependentUpon>QRCodeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ShareQRCode.resx">
+      <DependentUpon>ShareQRCode.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\StatisticsStrategyConfigurationForm.resx">
       <DependentUpon>StatisticsStrategyConfigurationForm.cs</DependentUpon>
