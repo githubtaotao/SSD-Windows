@@ -16,6 +16,8 @@ Microsoft Visual C++ 2015 Redistributable (x86)
 
 无\[360/2345/腾讯\]全家桶
 
+火绒不需要关闭
+
 ## Development - 开发
 
 Visual Studio 2019
